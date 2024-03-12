@@ -42,7 +42,10 @@ namespace Cosmos
                 enabled = CalcDefinitionObjectCondition(GetDefinitionObject(gobj->padding), (gobj->padding & 0x1000));
             }
 
-            if(!enabled) gobj->presenceFlags = 0x0;
+            if(!enabled) {
+                gobj->presenceFlags = 0x0;
+                gobj->objID = 0x0; //This ensure any object that ignores presence flags (eg. EnvFire) also get disabled
+            }
             else gobj->presenceFlags = 0x3f;
 
             gobj->objID &= 0x3ff;
