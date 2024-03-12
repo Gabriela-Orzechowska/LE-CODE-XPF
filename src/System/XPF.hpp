@@ -6,11 +6,8 @@
 #include <game/KMP/Controller.hpp>
 #include <game/Race/RaceData.hpp>
 
-
-
 namespace Cosmos
 {  
-
     bool isOnline() {
         GameMode mode = RaceData::sInstance->racesScenario.settings.gamemode;
         if(mode <= MODE_6) return false;
@@ -47,14 +44,13 @@ namespace Cosmos
         static XPFManager * GetStaticInstance() {return sInstance;} 
         static void CreateStaticInstance();
 
-        void EvaluateConditions(ObjectHolder * holder);
+        void EvaluateConditions();
 
         private:
         GOBJ * GetDefinitionObject(u16 id);
         bool CalcDefinitionObjectCondition(GOBJ * gobj, bool neg);
         bool CalcPredefinedCondition(u16 value);
         bool CalcConditionBits(u16 val, u8 field);
-        
 
         static XPFManager * sInstance;
         Random random;
