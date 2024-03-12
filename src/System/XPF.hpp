@@ -53,7 +53,7 @@ namespace Cosmos
         GOBJ * GetDefinitionObject(u16 id);
         bool CalcDefinitionObjectCondition(GOBJ * gobj, bool neg);
         bool CalcPredefinedCondition(u16 value);
-        bool XPFManager::CalcConditionBits(u16 val, u8 field);
+        bool CalcConditionBits(u16 val, u8 field);
         
 
         static XPFManager * sInstance;
