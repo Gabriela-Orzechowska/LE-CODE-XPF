@@ -22,7 +22,7 @@ namespace Cosmos
         return nullptr;
     }
 
-    void XPFManager::EvaluateConditions(ObjectHolder * holder)
+    void XPFManager::EvaluateConditions()
     {
         this->randScenario = random.NextLimited(8);
         if(isTT()) this->randScenario = 0;
@@ -214,7 +214,7 @@ namespace Cosmos
     }   
 
     void EvaluateXPF(ObjectHolder * holder, bool isMii){
-        XPFManager::GetStaticInstance()->EvaluateConditions(holder);
+        XPFManager::GetStaticInstance()->EvaluateConditions();
         holder->CreateAllObjects(isMii);
     }
     kmCall(0x8082a7d4, EvaluateXPF);
